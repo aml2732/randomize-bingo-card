@@ -13,6 +13,8 @@
       $html.="<br/>";
     }
     $result = array(
+      "headers" => [ "Content-Type" => "text/html"],
+      "statusCode" => 200,
       "body" => $html,
     );
     return $result;

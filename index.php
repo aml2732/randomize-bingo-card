@@ -49,6 +49,7 @@
         var size = document.getElementById("size").value;
         var list = document.getElementById("list").value;
         //TODO: handling to check if empty
+        //TODO: make sure size is always odd.
         randomize(size, list);
       }
 
@@ -80,14 +81,12 @@
         var xhttp = new XMLHttpRequest();
         xhttp.open("POST", config.card);
         xhttp.onreadystatechange = function(){
-          if (xhttp.readyState>3 && xhttp.status==200) { addToDom(xhttp.responseText); }
+          if (xhttp.readyState>3 && xhttp.status==200) {
+            document.getElementById("resultArea").innerHTML = xhttp.responseText;
+          }
         };
         xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhttp.send(JSON.stringify(payload));
-      }
-
-      function addToDom(result){
-        document.getElementById("resultArea").innerHTML = JSON.parse(result).body;
       }
 
     </script>

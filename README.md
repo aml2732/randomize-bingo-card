@@ -11,7 +11,7 @@ These instructions also assume you have gotten username:password, host, namespac
  * `wsk -i action create card bingocard.php --web true`  
  * `wsk -i api create /bingo/random post /<namespace>/randomizer`
  * COPY the URL that comes back from that command. That is how you'll access the randomizer endpoint.
- * `wsk -i api create /bingo/card post /<namespace>/card`
+ * `wsk -i api create /bingo/card post /<namespace>/card --response-type http`
  * COPY the URL that comes back from that command. This is how you'll access the card endpoint.
  * Create a new file called `config.json` under your working directory (/randomize-bingo-card/config.json)
  * Add the URLs to it in the form:
